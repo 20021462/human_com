@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:human_com/page/Devices/air_conditioner.dart';
+import 'package:human_com/page/Devices/fan.dart';
+import 'package:human_com/page/Devices/oven.dart';
 import 'package:human_com/page/Menu/setting_page.dart';
 import 'package:human_com/page/Menu/widget/menu_button.dart';
 import 'package:human_com/widget/page.dart';
@@ -28,7 +31,7 @@ class MenuPage extends StatelessWidget {
               },
             ),
             const SizedBox(
-              height: 100,
+              height: 60,
             ),
             MenuButton(
               title: 'History',
@@ -36,7 +39,7 @@ class MenuPage extends StatelessWidget {
               onPressed: () {},
             ),
             const SizedBox(
-              height: 100,
+              height: 60,
             ),
             MenuButton(
               title: 'How to use',

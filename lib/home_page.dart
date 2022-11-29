@@ -106,9 +106,9 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Voice Assistant',
                         style: TextStyle(
-                          fontWeight: FontWeight.w800,
-                          fontSize: 35,
-                        ),
+                            fontWeight: FontWeight.w800,
+                            fontSize: 35,
+                            fontFamily: 'Rounded Mplus 1c'),
                       ),
                     ],
                   ),
