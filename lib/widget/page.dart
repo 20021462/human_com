@@ -4,14 +4,14 @@ class PageApp extends StatelessWidget {
   final String title;
   final Widget body;
 
-  const PageApp({super.key, required this.title, required this.body});
+  const PageApp({Key key, this.title, this.body}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black,
           size: 50,
         ),

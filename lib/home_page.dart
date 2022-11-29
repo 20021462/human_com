@@ -3,10 +3,10 @@ import 'package:human_com/page/devices_page.dart';
 import 'package:human_com/page/Menu/menu_page.dart';
 import 'package:human_com/page/notification_page.dart';
 import 'package:human_com/page/favorite_page.dart';
-import 'package:human_com/page/voice_page.dart';
+import 'package:human_com/page/Voice/voice_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentTab = 0;
   final PageStorageBucket bucket = PageStorageBucket();
-  late Widget currentScreen;
+  Widget currentScreen;
 
   _HomePageState() {
     currentScreen = FavoritePage();

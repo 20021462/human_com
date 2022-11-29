@@ -12,7 +12,7 @@ var time = [
 ];
 
 class SmartLockPage extends StatefulWidget {
-  const SmartLockPage({super.key});
+  const SmartLockPage({Key key}) : super(key: key);
 
   @override
   State<SmartLockPage> createState() => _SmartLockPageState();
@@ -80,7 +80,7 @@ class _SmartLockPageState extends State<SmartLockPage> {
                           value: doorLockedTime,
                           onChanged: (hour) {
                             setState(() {
-                              doorLockedTime = hour!;
+                              doorLockedTime = hour;
                             });
                           },
                           items: time.map((hour) {
@@ -158,7 +158,7 @@ class _SmartLockPageState extends State<SmartLockPage> {
                           value: curtainLockedTime,
                           onChanged: (hour) {
                             setState(() {
-                              curtainLockedTime = hour!;
+                              curtainLockedTime = hour;
                             });
                           },
                           items: time.map((hour) {

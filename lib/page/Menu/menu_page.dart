@@ -4,7 +4,7 @@ import 'package:human_com/page/Menu/widget/menu_button.dart';
 import 'package:human_com/widget/page.dart';
 
 class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+  const MenuPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

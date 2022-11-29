@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:human_com/page/Menu/font_page.dart';
 import 'package:human_com/page/Menu/smartlock_page.dart';
 import 'package:human_com/widget/page.dart';
 
 class SettingPage extends StatefulWidget {
-  const SettingPage({super.key});
+  const SettingPage({Key key}) : super(key: key);
 
   @override
   State<SettingPage> createState() => _SettingPageState();
@@ -198,7 +199,14 @@ class _SettingPageState extends State<SettingPage> {
                 fixedSize:
                     MaterialStateProperty.all<Size>(const Size(1500, 100)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FontSizePage(),
+                  ),
+                );
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
