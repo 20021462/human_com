@@ -10,7 +10,7 @@ import '../Devices/fan.dart';
 import '../Devices/widget/device_button.dart';
 
 class LivingRoom extends StatelessWidget {
-  const LivingRoom({super.key});
+  const LivingRoom({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LivingRoom extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Choose a device to control",
                   style: TextStyle(fontSize: 40),
                 ),
@@ -34,7 +34,7 @@ class LivingRoom extends StatelessWidget {
                   runSpacing: 40,
                   children: [
                     DeviceButton(
-                        device_name: "Fan 1",
+                        deviceName: "Fan 1",
                         icon: Icons.wind_power_outlined,
                         onpressed: () {
                           Navigator.push(
@@ -45,7 +45,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Fan 2",
+                        deviceName: "Fan 2",
                         icon: Icons.wind_power_outlined,
                         onpressed: () {
                           Navigator.push(
@@ -56,7 +56,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Air conditioner",
+                        deviceName: "Air conditioner",
                         icon: Icons.air_outlined,
                         onpressed: () {
                           Navigator.push(
@@ -67,7 +67,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "TV",
+                        deviceName: "TV",
                         icon: Icons.tv,
                         onpressed: () {
                           Navigator.push(
@@ -78,7 +78,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Curtain",
+                        deviceName: "Curtain",
                         icon: Icons.blinds,
                         onpressed: () {
                           Navigator.push(
@@ -89,7 +89,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Lamp",
+                        deviceName: "Lamp",
                         icon: Icons.light_outlined,
                         onpressed: () {
                           Navigator.push(
@@ -100,7 +100,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Speaker",
+                        deviceName: "Speaker",
                         icon: Icons.speaker_outlined,
                         onpressed: () {
                           Navigator.push(
@@ -111,7 +111,7 @@ class LivingRoom extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Add device",
+                        deviceName: "Add device",
                         icon: Icons.add,
                         onpressed: () {}),
                   ],

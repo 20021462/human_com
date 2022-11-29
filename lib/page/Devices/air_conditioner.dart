@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:human_com/page/Devices/widget/device_controller.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:human_com/page/devices_page.dart';
 import 'package:human_com/widget/page.dart';
 
 class AirConditioner extends StatefulWidget {
-  const AirConditioner({super.key});
+  const AirConditioner({Key key}) : super(key: key);
 
   @override
   State<AirConditioner> createState() => _AirConditionerState();
@@ -16,16 +15,16 @@ class _AirConditionerState extends State<AirConditioner> {
   bool status = true;
 
   int _fanspeed = 1;
-  int _min_fanspeed = 1;
-  int _max_fanspeed = 3;
+  final int _minFanspeed = 1;
+  final int _maxFanspeed = 3;
 
   int _temperature = 26;
-  int _min_temperature = 16;
-  int _max_temperature = 30;
+  final int _minTemperature = 16;
+  final int _maxTemperature = 30;
 
   void _incrementFanSpeed() {
     setState(() {
-      if (_fanspeed < _max_fanspeed && status) {
+      if (_fanspeed < _maxFanspeed && status) {
         _fanspeed++;
       }
     });
@@ -33,7 +32,7 @@ class _AirConditionerState extends State<AirConditioner> {
 
   void _decreaseFanSpeed() {
     setState(() {
-      if (_fanspeed > _min_fanspeed && status) {
+      if (_fanspeed > _minFanspeed && status) {
         _fanspeed--;
       }
     });
@@ -41,7 +40,7 @@ class _AirConditionerState extends State<AirConditioner> {
 
   void _incrementTemperature() {
     setState(() {
-      if (_temperature < _max_temperature && status) {
+      if (_temperature < _maxTemperature && status) {
         _temperature++;
       }
     });
@@ -49,7 +48,7 @@ class _AirConditionerState extends State<AirConditioner> {
 
   void _decreaseTemperature() {
     setState(() {
-      if (_temperature > _min_temperature && status) {
+      if (_temperature > _minTemperature && status) {
         _temperature--;
       }
     });
@@ -85,18 +84,18 @@ class _AirConditionerState extends State<AirConditioner> {
                       height: 20,
                     ),
                     ControlButton(
-                      left_butt_func: _decreaseTemperature,
-                      right_butt_func: _incrementTemperature,
+                      leftButtFunc: _decreaseTemperature,
+                      rightButtFunc: _incrementTemperature,
                       label: "Temperature",
-                      value: _temperature.toString() + "℃",
+                      value: "$_temperature℃",
                       status: status,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     ControlButton(
-                      left_butt_func: _decreaseFanSpeed,
-                      right_butt_func: _incrementFanSpeed,
+                      leftButtFunc: _decreaseFanSpeed,
+                      rightButtFunc: _incrementFanSpeed,
                       label: "Fanspeed",
                       value: _fanspeed.toString(),
                       status: status,

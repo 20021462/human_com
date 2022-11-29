@@ -5,10 +5,10 @@ class LoginButt extends StatelessWidget {
   final Function() onPressed;
 
   const LoginButt({
-    super.key,
-    required this.title,
-    required this.onPressed,
-  });
+    Key key,
+    this.title,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

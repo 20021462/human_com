@@ -7,11 +7,11 @@ class LoginButtonSVG extends StatelessWidget {
   final Function() onPressed;
 
   const LoginButtonSVG({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.onPressed,
-  });
+    Key key,
+    this.title,
+    this.icon,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

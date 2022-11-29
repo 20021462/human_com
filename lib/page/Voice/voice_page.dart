@@ -26,7 +26,7 @@ class _VoicePageState extends State<VoicePage> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
-                backgroundColor: Color(0xFF007AFF),
+                backgroundColor: const Color(0xFF007AFF),
               ),
               onPressed: () {},
               child: const Icon(

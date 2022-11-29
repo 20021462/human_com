@@ -6,11 +6,11 @@ class LoginButton extends StatelessWidget {
   final Function() onPressed;
 
   const LoginButton({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.onPressed,
-  });
+    Key key,
+    this.title,
+    this.icon,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class LoginButton extends StatelessWidget {
           Icon(
             icon,
             size: 60,
-            color: Color(0xff4B6E7B),
+            color: const Color(0xff4B6E7B),
           ),
           const SizedBox(
             width: 50,

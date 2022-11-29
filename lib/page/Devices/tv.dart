@@ -3,12 +3,10 @@ import 'package:human_com/page/Devices/widget/channel_controller.dart';
 import 'package:human_com/page/Devices/widget/device_controller.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:marquee/marquee.dart';
-import 'package:human_com/page/devices_page.dart';
 import 'package:human_com/widget/page.dart';
 
 class TV extends StatefulWidget {
-  const TV({super.key});
+  const TV({Key key}) : super(key: key);
 
   @override
   State<TV> createState() => _TVState();
@@ -26,12 +24,12 @@ class _TVState extends State<TV> {
   int index = 0;
 
   int _volume = 50;
-  int _min_volume = 0;
-  int _max_volume = 100;
+  final int _minVolume = 0;
+  final int _maxVolume = 100;
 
   void _incrementVolume() {
     setState(() {
-      if (_volume < _max_volume && status) {
+      if (_volume < _maxVolume && status) {
         _volume++;
       }
     });
@@ -39,7 +37,7 @@ class _TVState extends State<TV> {
 
   void _decreaseVolume() {
     setState(() {
-      if (_volume > _min_volume && status) {
+      if (_volume > _minVolume && status) {
         _volume--;
       }
     });
@@ -75,12 +73,12 @@ class _TVState extends State<TV> {
                       height: 20,
                     ),
                     ChannelController(
-                      left_butt_func: () {
+                      leftButtFunc: () {
                         setState(() {
                           index = (index + 1) % channel.length;
                         });
                       },
-                      right_butt_func: () {
+                      rightButtFunc: () {
                         setState(() {
                           index = (index - 1) % channel.length;
                         });
@@ -89,12 +87,12 @@ class _TVState extends State<TV> {
                       channel: channel[index],
                       programme: programme[index],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     ControlButton(
-                      left_butt_func: _decreaseVolume,
-                      right_butt_func: _incrementVolume,
+                      leftButtFunc: _decreaseVolume,
+                      rightButtFunc: _incrementVolume,
                       label: "Volume",
                       value: _volume.toString(),
                       status: status,

@@ -6,6 +6,8 @@ import 'package:human_com/widget/page.dart';
 import 'package:human_com/page/Devices/widget/device_button.dart';
 
 class DevicesPage extends StatefulWidget {
+  const DevicesPage({Key key}) : super(key: key);
+
   @override
   State<DevicesPage> createState() => _DevicesPageState();
 }
@@ -21,21 +23,21 @@ class _DevicesPageState extends State<DevicesPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Security",
                 style: TextStyle(fontSize: 40),
               ),
               Row(
                 children: [
                   DeviceButton(
-                      device_name: "Camera",
+                      deviceName: "Camera",
                       icon: Icons.camera_outlined,
                       onpressed: () {}),
                   const SizedBox(
                     width: 40,
                   ),
                   DeviceButton(
-                      device_name: "Door",
+                      deviceName: "Door",
                       icon: Icons.door_back_door_outlined,
                       onpressed: () {})
                 ],
@@ -43,14 +45,14 @@ class _DevicesPageState extends State<DevicesPage> {
               const SizedBox(
                 height: 40,
               ),
-              Text(
+              const Text(
                 "Rooms",
                 style: TextStyle(fontSize: 40),
               ),
               Row(
                 children: [
                   DeviceButton(
-                      device_name: "Living room",
+                      deviceName: "Living room",
                       icon: Icons.living_outlined,
                       onpressed: () {
                         Navigator.push(
@@ -64,7 +66,7 @@ class _DevicesPageState extends State<DevicesPage> {
                     width: 40,
                   ),
                   DeviceButton(
-                      device_name: "Bed room",
+                      deviceName: "Bed room",
                       icon: Icons.bedroom_parent_outlined,
                       onpressed: () {
                         Navigator.push(
@@ -78,7 +80,7 @@ class _DevicesPageState extends State<DevicesPage> {
                     width: 40,
                   ),
                   DeviceButton(
-                      device_name: "Kitchen",
+                      deviceName: "Kitchen",
                       icon: Icons.kitchen_outlined,
                       onpressed: () {
                         Navigator.push(
@@ -92,7 +94,7 @@ class _DevicesPageState extends State<DevicesPage> {
                     width: 40,
                   ),
                   DeviceButton(
-                      device_name: "Bathroom",
+                      deviceName: "Bathroom",
                       icon: Icons.bathroom_outlined,
                       onpressed: () {}),
                 ],

@@ -5,12 +5,13 @@ class LoginFormField extends StatelessWidget {
   final String hint;
   final Widget icon;
   final Function() onPressed;
-  const LoginFormField(
-      {super.key,
-      required this.label,
-      required this.hint,
-      required this.icon,
-      required this.onPressed});
+  const LoginFormField({
+    Key key,
+    this.label,
+    this.hint,
+    this.icon,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
 class ChannelController extends StatelessWidget {
-  final Function() left_butt_func;
-  final Function() right_butt_func;
+  final Function() leftButtFunc;
+  final Function() rightButtFunc;
 
   final String channel;
   final String programme;
 
   final bool status;
-  const ChannelController(
-      {super.key,
-      required this.left_butt_func,
-      required this.right_butt_func,
-      required this.status,
-      required this.channel,
-      required this.programme});
+  const ChannelController({
+    Key key,
+    this.leftButtFunc,
+    this.rightButtFunc,
+    this.status,
+    this.channel,
+    this.programme,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class ChannelController extends StatelessWidget {
       children: [
         Text(
           channel,
-          style: TextStyle(fontSize: 40),
+          style: const TextStyle(fontSize: 40),
         ),
         Container(
           width: 420,
@@ -33,14 +34,14 @@ class ChannelController extends StatelessWidget {
               : const Color(0xffD9D9D9),
           child: Marquee(
             text: programme,
-            style: TextStyle(fontSize: 30),
+            style: const TextStyle(fontSize: 30),
             velocity: 25.0,
             startPadding: 10.0,
             blankSpace: 20.0,
-            pauseAfterRound: Duration(seconds: 1),
+            pauseAfterRound: const Duration(seconds: 1),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Row(
@@ -51,7 +52,7 @@ class ChannelController extends StatelessWidget {
                 style: ButtonStyle(
                     alignment: Alignment.center,
                     shape: MaterialStateProperty.all<CircleBorder>(
-                      CircleBorder(),
+                      const CircleBorder(),
                     ),
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color(0xFFFE9800)),
@@ -59,8 +60,8 @@ class ChannelController extends StatelessWidget {
                         MaterialStateProperty.all<Size>(const Size(120, 120)),
                     shadowColor:
                         MaterialStateProperty.all<Color>(Colors.black)),
-                onPressed: left_butt_func,
-                child: Icon(
+                onPressed: leftButtFunc,
+                child: const Icon(
                   Icons.skip_previous_outlined,
                   size: 90,
                   color: Colors.black,
@@ -71,7 +72,7 @@ class ChannelController extends StatelessWidget {
             ElevatedButton(
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<CircleBorder>(
-                      CircleBorder(),
+                      const CircleBorder(),
                     ),
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color(0xFFFE9800)),
@@ -79,8 +80,8 @@ class ChannelController extends StatelessWidget {
                         MaterialStateProperty.all<Size>(const Size(120, 120)),
                     shadowColor:
                         MaterialStateProperty.all<Color>(Colors.black)),
-                onPressed: right_butt_func,
-                child: Icon(
+                onPressed: rightButtFunc,
+                child: const Icon(
                   Icons.pause,
                   size: 90,
                   color: Colors.black,
@@ -92,7 +93,7 @@ class ChannelController extends StatelessWidget {
                 style: ButtonStyle(
                     alignment: Alignment.center,
                     shape: MaterialStateProperty.all<CircleBorder>(
-                      CircleBorder(),
+                      const CircleBorder(),
                     ),
                     backgroundColor: MaterialStateProperty.all<Color>(
                         const Color(0xFFFE9800)),
@@ -100,8 +101,8 @@ class ChannelController extends StatelessWidget {
                         MaterialStateProperty.all<Size>(const Size(120, 120)),
                     shadowColor:
                         MaterialStateProperty.all<Color>(Colors.black)),
-                onPressed: right_butt_func,
-                child: Icon(
+                onPressed: rightButtFunc,
+                child: const Icon(
                   Icons.skip_next_outlined,
                   size: 90,
                   color: Colors.black,

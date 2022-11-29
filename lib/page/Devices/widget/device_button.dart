@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DeviceButton extends StatelessWidget {
-  final String device_name;
+  final String deviceName;
   final IconData icon;
   final Function() onpressed;
-  const DeviceButton(
-      {super.key,
-      required this.device_name,
-      required this.icon,
-      required this.onpressed});
+  const DeviceButton({
+    Key key,
+    this.deviceName,
+    this.icon,
+    this.onpressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class DeviceButton extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all<Color>(
                 const Color.fromRGBO(227, 154, 87, 0.5)),
             fixedSize: MaterialStateProperty.all<Size>(const Size(270, 200)),
-            side: MaterialStateProperty.all(BorderSide(
+            side: MaterialStateProperty.all(const BorderSide(
                 color: Color(0xff5E899A),
                 width: 5.0,
                 style: BorderStyle.solid))),
@@ -36,8 +37,8 @@ class DeviceButton extends StatelessWidget {
               size: 110,
             ),
             Text(
-              device_name,
-              style: TextStyle(
+              deviceName,
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 35,
                   fontFamily: "Rounded Mplus 1c"),

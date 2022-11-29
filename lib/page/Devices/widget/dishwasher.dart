@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:human_com/page/Devices/widget/channel_controller.dart';
-import 'package:human_com/page/Devices/widget/device_controller.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:marquee/marquee.dart';
-import 'package:human_com/page/devices_page.dart';
 import 'package:human_com/widget/page.dart';
 
 class DishWasher extends StatefulWidget {
-  const DishWasher({super.key});
+  const DishWasher({Key key}) : super(key: key);
 
   @override
   State<DishWasher> createState() => _DishWasherState();
@@ -23,12 +19,12 @@ class _DishWasherState extends State<DishWasher> {
   int index = 0;
 
   int _volume = 50;
-  int _min_volume = 0;
-  int _max_volume = 100;
+  final int _minVolume = 0;
+  final int _maxVolume = 100;
 
   void _incrementVolume() {
     setState(() {
-      if (_volume < _max_volume && status) {
+      if (_volume < _maxVolume && status) {
         _volume++;
       }
     });
@@ -36,7 +32,7 @@ class _DishWasherState extends State<DishWasher> {
 
   void _decreaseVolume() {
     setState(() {
-      if (_volume > _min_volume && status) {
+      if (_volume > _minVolume && status) {
         _volume--;
       }
     });
@@ -78,7 +74,7 @@ class _DishWasherState extends State<DishWasher> {
                         ElevatedButton(
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all<CircleBorder>(
-                                  CircleBorder(),
+                                  const CircleBorder(),
                                 ),
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
@@ -92,7 +88,7 @@ class _DishWasherState extends State<DishWasher> {
                                 index = (index - 1) % mode.length;
                               });
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.arrow_back_ios,
                               size: 90,
                               color: Colors.black,
@@ -102,7 +98,7 @@ class _DishWasherState extends State<DishWasher> {
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "Mode",
                               style: TextStyle(fontSize: 50),
                             ),
@@ -110,14 +106,14 @@ class _DishWasherState extends State<DishWasher> {
                                 ? Container(
                                     width: 290,
                                     height: 100,
-                                    decoration: BoxDecoration(
-                                      color: const Color.fromRGBO(
-                                          248, 221, 125, 0.45),
+                                    decoration: const BoxDecoration(
+                                      color:
+                                          Color.fromRGBO(248, 221, 125, 0.45),
                                     ),
                                     child: Center(
                                       child: Text(
                                         mode[index],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 70,
                                         ),
                                         textAlign: TextAlign.center,
@@ -127,8 +123,8 @@ class _DishWasherState extends State<DishWasher> {
                                 : Container(
                                     width: 290,
                                     height: 100,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xffD9D9D9),
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xffD9D9D9),
                                     ),
                                   )
                           ],
@@ -139,7 +135,7 @@ class _DishWasherState extends State<DishWasher> {
                         ElevatedButton(
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all<CircleBorder>(
-                                  CircleBorder(),
+                                  const CircleBorder(),
                                 ),
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
@@ -153,26 +149,26 @@ class _DishWasherState extends State<DishWasher> {
                                 index = (index + 1) % mode.length;
                               });
                             },
-                            child: Icon(
+                            child: const Icon(
                               Icons.arrow_forward_ios,
                               size: 90,
                               color: Colors.black,
                             )),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 320,
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               "Timer",
                               style: TextStyle(fontSize: 50),
                             ),
@@ -180,14 +176,14 @@ class _DishWasherState extends State<DishWasher> {
                                 ? Container(
                                     width: 205,
                                     height: 100,
-                                    decoration: BoxDecoration(
-                                      color: const Color.fromRGBO(
-                                          248, 221, 125, 0.45),
+                                    decoration: const BoxDecoration(
+                                      color:
+                                          Color.fromRGBO(248, 221, 125, 0.45),
                                     ),
                                     child: Center(
                                       child: Text(
                                         timer[index].toString(),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 70,
                                         ),
                                         textAlign: TextAlign.center,
@@ -197,8 +193,8 @@ class _DishWasherState extends State<DishWasher> {
                                 : Container(
                                     width: 205,
                                     height: 100,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xffD9D9D9),
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xffD9D9D9),
                                     ),
                                   )
                           ],
@@ -209,7 +205,7 @@ class _DishWasherState extends State<DishWasher> {
                         ElevatedButton(
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all<CircleBorder>(
-                                  CircleBorder(),
+                                  const CircleBorder(),
                                 ),
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(status
@@ -224,7 +220,7 @@ class _DishWasherState extends State<DishWasher> {
                                 index = (index + 1) % mode.length;
                               });
                             },
-                            child: Text(
+                            child: const Text(
                               "Wash",
                               style:
                                   TextStyle(fontSize: 35, color: Colors.black),
@@ -235,7 +231,7 @@ class _DishWasherState extends State<DishWasher> {
                         ElevatedButton(
                             style: ButtonStyle(
                                 shape: MaterialStateProperty.all<CircleBorder>(
-                                  CircleBorder(),
+                                  const CircleBorder(),
                                 ),
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
@@ -249,7 +245,7 @@ class _DishWasherState extends State<DishWasher> {
                                 index = (index + 1) % mode.length;
                               });
                             },
-                            child: Text(
+                            child: const Text(
                               "Dry",
                               style:
                                   TextStyle(fontSize: 35, color: Colors.black),

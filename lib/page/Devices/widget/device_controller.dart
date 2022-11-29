@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class ControlButton extends StatelessWidget {
-  final Function() left_butt_func;
-  final Function() right_butt_func;
+  final Function() leftButtFunc;
+  final Function() rightButtFunc;
   final String label;
   final String value;
   final bool status;
-  const ControlButton(
-      {super.key,
-      required this.left_butt_func,
-      required this.right_butt_func,
-      required this.label,
-      required this.value,
-      required this.status});
+  const ControlButton({
+    Key key,
+    this.leftButtFunc,
+    this.rightButtFunc,
+    this.label,
+    this.value,
+    this.status,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +24,15 @@ class ControlButton extends StatelessWidget {
         ElevatedButton(
             style: ButtonStyle(
                 shape: MaterialStateProperty.all<CircleBorder>(
-                  CircleBorder(),
+                  const CircleBorder(),
                 ),
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFFE9800)),
                 fixedSize:
                     MaterialStateProperty.all<Size>(const Size(120, 120)),
                 shadowColor: MaterialStateProperty.all<Color>(Colors.black)),
-            onPressed: left_butt_func,
-            child: Icon(
+            onPressed: leftButtFunc,
+            child: const Icon(
               Icons.remove,
               size: 90,
               color: Colors.black,
@@ -43,19 +44,19 @@ class ControlButton extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(fontSize: 50),
+              style: const TextStyle(fontSize: 50),
             ),
             status
                 ? Container(
                     width: 204,
                     height: 100,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(248, 221, 125, 0.45),
+                    decoration: const BoxDecoration(
+                      color: Color.fromRGBO(248, 221, 125, 0.45),
                     ),
                     child: Center(
                       child: Text(
                         value,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 70,
                         ),
                         textAlign: TextAlign.center,
@@ -65,8 +66,8 @@ class ControlButton extends StatelessWidget {
                 : Container(
                     width: 204,
                     height: 100,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffD9D9D9),
+                    decoration: const BoxDecoration(
+                      color: Color(0xffD9D9D9),
                     ),
                   )
           ],
@@ -77,15 +78,15 @@ class ControlButton extends StatelessWidget {
         ElevatedButton(
             style: ButtonStyle(
                 shape: MaterialStateProperty.all<CircleBorder>(
-                  CircleBorder(),
+                  const CircleBorder(),
                 ),
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFFE9800)),
                 fixedSize:
                     MaterialStateProperty.all<Size>(const Size(120, 120)),
                 shadowColor: MaterialStateProperty.all<Color>(Colors.black)),
-            onPressed: right_butt_func,
-            child: Icon(
+            onPressed: rightButtFunc,
+            child: const Icon(
               Icons.add,
               size: 90,
               color: Colors.black,

@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget currentScreen;
 
   _HomePageState() {
-    currentScreen = FavoritePage();
+    currentScreen = const FavoritePage();
   }
 
   @override
@@ -35,10 +35,11 @@ class _HomePageState extends State<HomePage> {
             children: [
               Expanded(
                 child: MaterialButton(
-                  color: currentTab == 0 ? Color(0xFFCFDCE1) : Colors.white,
+                  color:
+                      currentTab == 0 ? const Color(0xFFCFDCE1) : Colors.white,
                   onPressed: () {
                     setState(() {
-                      currentScreen = FavoritePage();
+                      currentScreen = const FavoritePage();
                       currentTab = 0;
                     });
                   },
@@ -62,10 +63,11 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: MaterialButton(
-                  color: currentTab == 1 ? Color(0xFFCFDCE1) : Colors.white,
+                  color:
+                      currentTab == 1 ? const Color(0xFFCFDCE1) : Colors.white,
                   onPressed: () {
                     setState(() {
-                      currentScreen = DevicesPage();
+                      currentScreen = const DevicesPage();
                       currentTab = 1;
                     });
                   },
@@ -89,10 +91,11 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: MaterialButton(
-                  color: currentTab == 2 ? Color(0xFFCFDCE1) : Colors.white,
+                  color:
+                      currentTab == 2 ? const Color(0xFFCFDCE1) : Colors.white,
                   onPressed: () {
                     setState(() {
-                      currentScreen = VoicePage();
+                      currentScreen = const VoicePage();
                       currentTab = 2;
                     });
                   },
@@ -116,10 +119,11 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: MaterialButton(
-                  color: currentTab == 3 ? Color(0xFFCFDCE1) : Colors.white,
+                  color:
+                      currentTab == 3 ? const Color(0xFFCFDCE1) : Colors.white,
                   onPressed: () {
                     setState(() {
-                      currentScreen = NotificationPage();
+                      currentScreen = const NotificationPage();
                       currentTab = 3;
                     });
                   },
@@ -143,10 +147,11 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: MaterialButton(
-                  color: currentTab == 4 ? Color(0xFFCFDCE1) : Colors.white,
+                  color:
+                      currentTab == 4 ? const Color(0xFFCFDCE1) : Colors.white,
                   onPressed: () {
                     setState(() {
-                      currentScreen = MenuPage();
+                      currentScreen = const MenuPage();
                       currentTab = 4;
                     });
                   },

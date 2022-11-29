@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:human_com/page/Devices/widget/device_controller.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:human_com/page/devices_page.dart';
 import 'package:human_com/widget/page.dart';
 
 class Curtain extends StatefulWidget {
-  const Curtain({super.key});
+  const Curtain({Key key}) : super(key: key);
 
   @override
   State<Curtain> createState() => _CurtainState();
@@ -16,12 +15,12 @@ class _CurtainState extends State<Curtain> {
   bool status = true;
 
   int _shadelevel = 50;
-  int _min_shadelevel = 0;
-  int _max_shadelevel = 100;
+  final int _minShadelevel = 0;
+  final int _maxShadelevel = 100;
 
   void _incrementShadeLevel() {
     setState(() {
-      if (_shadelevel < _max_shadelevel && status) {
+      if (_shadelevel < _maxShadelevel && status) {
         _shadelevel++;
       }
     });
@@ -29,7 +28,7 @@ class _CurtainState extends State<Curtain> {
 
   void _decreaseShadeLevel() {
     setState(() {
-      if (_shadelevel > _min_shadelevel && status) {
+      if (_shadelevel > _minShadelevel && status) {
         _shadelevel--;
       }
     });
@@ -65,10 +64,10 @@ class _CurtainState extends State<Curtain> {
                       height: 70,
                     ),
                     ControlButton(
-                      left_butt_func: _decreaseShadeLevel,
-                      right_butt_func: _incrementShadeLevel,
+                      leftButtFunc: _decreaseShadeLevel,
+                      rightButtFunc: _incrementShadeLevel,
                       label: "Shade level",
-                      value: _shadelevel.toString() + "%",
+                      value: "$_shadelevel%",
                       status: status,
                     ),
                   ]),

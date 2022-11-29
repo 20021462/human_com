@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:human_com/page/Devices/widget/device_controller.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:human_com/page/devices_page.dart';
 import 'package:human_com/widget/page.dart';
 
 class Lamp extends StatefulWidget {
-  const Lamp({super.key});
+  const Lamp({Key key}) : super(key: key);
 
   @override
   State<Lamp> createState() => _LampState();
@@ -16,12 +15,12 @@ class _LampState extends State<Lamp> {
   bool status = true;
 
   int _brightness = 50;
-  int _min_brightness = 0;
-  int _max_brightness = 100;
+  final int _minBrightness = 0;
+  final int _maxBrightness = 100;
 
   void _incrementBrightness() {
     setState(() {
-      if (_brightness < _max_brightness && status) {
+      if (_brightness < _maxBrightness && status) {
         _brightness++;
       }
     });
@@ -29,7 +28,7 @@ class _LampState extends State<Lamp> {
 
   void _decreaseBrightness() {
     setState(() {
-      if (_brightness > _min_brightness && status) {
+      if (_brightness > _minBrightness && status) {
         _brightness--;
       }
     });
@@ -65,10 +64,10 @@ class _LampState extends State<Lamp> {
                       height: 70,
                     ),
                     ControlButton(
-                      left_butt_func: _decreaseBrightness,
-                      right_butt_func: _incrementBrightness,
+                      leftButtFunc: _decreaseBrightness,
+                      rightButtFunc: _incrementBrightness,
                       label: "Brightness",
-                      value: _brightness.toString() + "%",
+                      value: "$_brightness%",
                       status: status,
                     ),
                   ]),

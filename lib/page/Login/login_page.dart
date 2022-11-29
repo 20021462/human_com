@@ -8,7 +8,7 @@ import 'package:human_com/page/Login/widget/form_field.dart';
 import 'package:human_com/home_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   bool visiblePassword = false;
   @override
   void initState() {
+    super.initState();
     visiblePassword = false;
     FocusManager.instance.primaryFocus?.unfocus();
   }
@@ -42,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
             height: 50,
           ),
           IntrinsicHeight(
-              child: Container(
+              child: SizedBox(
             width: 1440,
             child: Row(
               // mainAxisSize: MainAxisSize.min,

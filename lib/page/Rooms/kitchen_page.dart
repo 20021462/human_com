@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:human_com/page/Devices/air_conditioner.dart';
 import 'package:human_com/page/Devices/oven.dart';
-import 'package:human_com/page/Devices/speaker.dart';
-import 'package:human_com/page/Devices/tv.dart';
 import 'package:human_com/page/Devices/widget/dishwasher.dart';
 import 'package:human_com/widget/page.dart';
 
-import '../Devices/fan.dart';
 import '../Devices/widget/device_button.dart';
 
 class Kitchen extends StatelessWidget {
-  const Kitchen({super.key});
+  const Kitchen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +19,7 @@ class Kitchen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Choose a device to control",
                   style: TextStyle(fontSize: 40),
                 ),
@@ -35,7 +31,7 @@ class Kitchen extends StatelessWidget {
                   runSpacing: 40,
                   children: [
                     DeviceButton(
-                        device_name: "Oven",
+                        deviceName: "Oven",
                         icon: Icons.microwave_outlined,
                         onpressed: () {
                           Navigator.push(
@@ -46,7 +42,7 @@ class Kitchen extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Dishwasher",
+                        deviceName: "Dishwasher",
                         icon: FontAwesomeIcons.kitchenSet,
                         onpressed: () {
                           Navigator.push(
@@ -57,7 +53,7 @@ class Kitchen extends StatelessWidget {
                           );
                         }),
                     DeviceButton(
-                        device_name: "Add device",
+                        deviceName: "Add device",
                         icon: Icons.add,
                         onpressed: () {}),
                   ],

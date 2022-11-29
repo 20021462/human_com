@@ -4,6 +4,8 @@ import 'package:human_com/widget/wel_button.dart';
 import 'package:human_com/page/Login/login_page.dart';
 
 class WelcomePage extends StatelessWidget {
+  const WelcomePage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:human_com/page/Devices/air_conditioner.dart';
-import 'package:human_com/page/Devices/fan.dart';
-import 'package:human_com/page/Devices/oven.dart';
 import 'package:human_com/page/Menu/setting_page.dart';
 import 'package:human_com/page/Menu/widget/menu_button.dart';
 import 'package:human_com/widget/page.dart';

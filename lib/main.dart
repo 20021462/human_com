@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:human_com/home_page.dart';
-import 'package:human_com/page/Devices/fan.dart';
-import 'package:human_com/page/Login/login_page.dart';
-import 'package:human_com/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +22,7 @@ class MyApp extends StatelessWidget {
       //   '/welcomepage': (context) => WelcomePage(),
       //   '/mainpage': (context) => HomePage(),
       // },
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
