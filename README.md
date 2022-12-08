@@ -1,16 +1,10 @@
-# human_com
+INT2041 40
+BÀI TẬP LỚN
 
-A new Flutter project.
+Chủ đề: ỨNG DỤNG ĐIỀU KHIỂN THÔNG MINH CÁC THIẾT BỊ TRONG NHÀ DÀNH CHO NGƯỜI CAO TUỔI
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thành viên đóng góp:
+Đàm Nguyệt Ánh - 20020129
+Nguyễn Vân Hà - 20020222
+Nguyễn Đăng Minh Phương - 20020151
+Nguyễn Trung Tú - 20021462
