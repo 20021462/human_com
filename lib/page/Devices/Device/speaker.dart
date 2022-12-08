@@ -1,60 +1,87 @@
 import 'package:flutter/material.dart';
+import 'package:human_com/page/Devices/devices_main.dart';
 import 'package:human_com/page/Devices/widget/channel_controller.dart';
 import 'package:human_com/page/Devices/widget/device_controller.dart';
+import 'package:human_com/page/Devices/widget/device_scaffold.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:human_com/widget/page.dart';
 
-class TV extends StatefulWidget {
-  const TV({Key key}) : super(key: key);
-
+class Speaker extends StatefulWidget {
+  const Speaker(this.room, this.id, {Key key}) : super(key: key);
+  final String room;
+  final int id;
   @override
-  State<TV> createState() => _TVState();
+  State<Speaker> createState() => _SpeakerState();
 }
 
-class _TVState extends State<TV> {
-  bool status = true;
+class _SpeakerState extends State<Speaker> {
+  int _id;
+  String _room;
+  String _name;
+  bool _status;
+  int _index;
+  int _volume;
+  bool _favorite;
 
-  List<String> channel = <String>["HBO", "BBC Earth", "Cartoon Network"];
+  @override
+  void initState() {
+    super.initState();
+    _id = widget.id;
+    _room = widget.room;
+    _name = listDevice[_room][_id]['name'];
+    _status = listDevice[_room][_id]['status'];
+    _index = listDevice[_room][_id]['index'];
+    _volume = listDevice[_room][_id]['volume'];
+    _favorite = listDevice[_room][_id]['favorite'];
+  }
+
+  List<String> channel = <String>["Playing song"];
   List<String> programme = <String>[
-    "Harry Potter and the chamber of secrets",
-    "Dinosaur Apocalypse",
-    "The amazing world of Gumball"
+    "Star walkin' - Lil Nas X",
+    "Merry go round of life - Joe Hisaishi",
+    "Les oiseaux - Pomme"
   ];
-  int index = 0;
 
-  int _volume = 50;
   final int _minVolume = 0;
   final int _maxVolume = 100;
 
+  void setFavorite() {
+    _favorite = !_favorite;
+    listDevice[_room][_id]['favorite'] = _favorite;
+  }
+
   void _incrementVolume() {
     setState(() {
-      if (_volume < _maxVolume && status) {
+      if (_volume < _maxVolume && _status) {
         _volume++;
+        listDevice[_room][_id]['volume'] = _volume;
       }
     });
   }
 
   void _decreaseVolume() {
     setState(() {
-      if (_volume > _minVolume && status) {
+      if (_volume > _minVolume && _status) {
         _volume--;
+        listDevice[_room][_id]['volume'] = _volume;
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return PageApp(
-        title: "TV",
+    return DeviceScaffold(
+        setFavorite: setFavorite,
+        favorite: _favorite,
+        title: _name,
         body: Stack(
           children: [
             Positioned(
               right: 50,
               top: 30,
               child: DeviceStatus(
-                status: status,
-                icon: Icons.tv_outlined,
+                status: _status,
+                icon: Icons.speaker_outlined,
               ),
             ),
             Center(
@@ -65,7 +92,8 @@ class _TVState extends State<TV> {
                     PowerButton(
                       onpressed: () {
                         setState(() {
-                          status = !status;
+                          _status = !_status;
+                          listDevice[_room][_id]['status'] = _status;
                         });
                       },
                     ),
@@ -75,17 +103,19 @@ class _TVState extends State<TV> {
                     ChannelController(
                       leftButtFunc: () {
                         setState(() {
-                          index = (index + 1) % channel.length;
+                          _index = (_index + 1) % programme.length;
+                          listDevice[_room][_id]['index'] = _index;
                         });
                       },
                       rightButtFunc: () {
                         setState(() {
-                          index = (index - 1) % channel.length;
+                          _index = (_index - 1) % programme.length;
+                          listDevice[_room][_id]['index'] = _index;
                         });
                       },
-                      status: status,
-                      channel: channel[index],
-                      programme: programme[index],
+                      status: _status,
+                      channel: channel[0],
+                      programme: programme[_index],
                     ),
                     const SizedBox(
                       height: 30,
@@ -95,7 +125,7 @@ class _TVState extends State<TV> {
                       rightButtFunc: _incrementVolume,
                       label: "Volume",
                       value: _volume.toString(),
-                      status: status,
+                      status: _status,
                     )
                   ]),
             )

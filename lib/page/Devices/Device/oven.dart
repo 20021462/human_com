@@ -1,77 +1,109 @@
 import 'package:flutter/material.dart';
+import 'package:human_com/page/Devices/devices_main.dart';
 import 'package:human_com/page/Devices/widget/device_controller.dart';
+import 'package:human_com/page/Devices/widget/device_scaffold.dart';
 import 'package:human_com/page/Devices/widget/device_status.dart';
 import 'package:human_com/page/Devices/widget/power_button.dart';
-import 'package:human_com/widget/page.dart';
 
 class Oven extends StatefulWidget {
-  const Oven({Key key}) : super(key: key);
-
+  const Oven(this.room, this.id, {Key key}) : super(key: key);
+  final String room;
+  final int id;
   @override
   State<Oven> createState() => _OvenState();
 }
 
 class _OvenState extends State<Oven> {
-  bool status = true;
+  int _id;
+  String _room;
+  String _name;
+  bool _status;
+  int _temperature;
+  int _timerH;
+  int _timerM;
+  bool _favorite;
 
-  int _temperature = 180;
+  @override
+  void initState() {
+    super.initState();
+    _id = widget.id;
+    _room = widget.room;
+    _name = listDevice[_room][_id]['name'];
+    _status = listDevice[_room][_id]['status'];
+    _temperature = listDevice[_room][_id]['temperature'];
+    _timerH = listDevice[_room][_id]['timerH'];
+    _timerM = listDevice[_room][_id]['timerM'];
+    _favorite = listDevice[_room][_id]['favorite'];
+  }
+
   final int _minTemperature = 60;
   final int _maxTemperature = 250;
 
-  int _timerH = 1;
-  int _timerM = 30;
   final int _minTimer = 0;
   final int _maxTimer = 59;
 
+  void setFavorite() {
+    _favorite = !_favorite;
+    listDevice[_room][_id]['favorite'] = _favorite;
+  }
+
   void _incrementTemperature() {
     setState(() {
-      if (_temperature < _maxTemperature && status) {
+      if (_temperature < _maxTemperature && _status) {
         _temperature++;
+        listDevice[_room][_id]['temperature'] = _temperature;
       }
     });
   }
 
   void _decreaseTemperature() {
     setState(() {
-      if (_temperature > _minTemperature && status) {
+      if (_temperature > _minTemperature && _status) {
         _temperature--;
+        listDevice[_room][_id]['temperature'] = _temperature;
       }
     });
   }
 
   void _incrementTimer() {
     setState(() {
-      if (_timerM < _maxTimer && status) {
+      if (_timerM < _maxTimer && _status) {
         _timerM++;
-      } else if (_timerM >= _maxTimer && status) {
+      } else if (_timerM >= _maxTimer && _status) {
         _timerH++;
         _timerM = 0;
       }
+      listDevice[_room][_id]['timerH'] = _timerH;
+      listDevice[_room][_id]['timerM'] = _timerM;
     });
   }
 
   void _decreaseTimer() {
     setState(() {
-      if (_timerM > _minTimer && _timerH > _minTimer && status) {
+      if (_timerM > _minTimer && _timerH > _minTimer && _status) {
         _timerM--;
-      } else if (_timerM <= _minTimer && _timerH > _minTimer && status) {
+      } else if (_timerM <= _minTimer && _timerH > _minTimer && _status) {
         _timerH--;
         _timerM = 59;
       }
+      listDevice[_room][_id]['timerH'] = _timerH;
+      listDevice[_room][_id]['timerM'] = _timerM;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return PageApp(
-        title: "Oven",
+    return DeviceScaffold(
+        setFavorite: setFavorite,
+        favorite: _favorite,
+        title: _name,
         body: Stack(
           children: [
             Positioned(
               right: 50,
               top: 30,
               child: DeviceStatus(
-                status: status,
+                status: _status,
                 icon: Icons.microwave_outlined,
               ),
             ),
@@ -83,7 +115,8 @@ class _OvenState extends State<Oven> {
                     PowerButton(
                       onpressed: () {
                         setState(() {
-                          status = !status;
+                          _status = !_status;
+                          listDevice[_room][_id]['status'] = _status;
                         });
                       },
                     ),
@@ -95,7 +128,7 @@ class _OvenState extends State<Oven> {
                       rightButtFunc: _incrementTemperature,
                       label: "Temperature",
                       value: '$_temperature℃',
-                      status: status,
+                      status: _status,
                     ),
                     const SizedBox(
                       height: 30,
@@ -105,7 +138,7 @@ class _OvenState extends State<Oven> {
                       rightButtFunc: _incrementTimer,
                       label: "Timer",
                       value: "$_timerH:$_timerM",
-                      status: status,
+                      status: _status,
                     )
                   ]),
             )

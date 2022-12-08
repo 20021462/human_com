@@ -5,17 +5,20 @@ class LoginFormField extends StatelessWidget {
   final String hint;
   final Widget icon;
   final Function() onPressed;
+  final bool password;
   const LoginFormField({
     Key key,
     this.label,
     this.hint,
     this.icon,
     this.onPressed,
+    this.password,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: password,
       style: const TextStyle(fontSize: 35),
       decoration: InputDecoration(
           labelText: label,
