@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:human_com/page/devices_page.dart';
+import 'package:human_com/page/Devices/devices_page.dart';
 import 'package:human_com/page/Menu/menu_page.dart';
 import 'package:human_com/page/notification_page.dart';
-import 'package:human_com/page/favorite_page.dart';
+import 'package:human_com/page/Favorite/favorite_page.dart';
 import 'package:human_com/page/Voice/voice_page.dart';
 
 class HomePage extends StatefulWidget {

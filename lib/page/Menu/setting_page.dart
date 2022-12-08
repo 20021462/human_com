@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:human_com/page/Login/login_page.dart';
 import 'package:human_com/page/Menu/font_page.dart';
 import 'package:human_com/page/Menu/smartlock_page.dart';
 import 'package:human_com/widget/page.dart';
@@ -252,7 +253,14 @@ class _SettingPageState extends State<SettingPage> {
                 fixedSize:
                     MaterialStateProperty.all<Size>(const Size(400, 100)),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
+              },
               child: const Text(
                 'Log out',
                 style: TextStyle(
