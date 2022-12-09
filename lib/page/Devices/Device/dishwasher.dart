@@ -166,12 +166,9 @@ class _DishWasherState extends State<DishWasher> {
                   height: 30,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const SizedBox(
-                      width: 320,
-                    ),
                     Column(
                       children: [
                         const Text(
@@ -205,9 +202,9 @@ class _DishWasherState extends State<DishWasher> {
                       ],
                     ),
                     const SizedBox(
-                      width: 140,
+                      width: 130,
                     ),
-                    ElevatedButton(
+                    TextButton(
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all<CircleBorder>(
                             const CircleBorder(),
@@ -220,21 +217,16 @@ class _DishWasherState extends State<DishWasher> {
                               const Size(120, 120)),
                           shadowColor:
                               MaterialStateProperty.all<Color>(Colors.black)),
-                      onPressed: () {
-                        setState(() {
-                          _index = (_index + 1) % mode.length;
-                          listDevice[_room][_id]['index'] = _index;
-                        });
-                      },
+                      onPressed: () {},
                       child: const Text(
                         "Wash",
                         style: TextStyle(fontSize: 35, color: Colors.black),
                       ),
                     ),
                     const SizedBox(
-                      width: 190,
+                      width: 170,
                     ),
-                    ElevatedButton(
+                    TextButton(
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all<CircleBorder>(
                             const CircleBorder(),
@@ -245,12 +237,7 @@ class _DishWasherState extends State<DishWasher> {
                               const Size(120, 120)),
                           shadowColor:
                               MaterialStateProperty.all<Color>(Colors.black)),
-                      onPressed: () {
-                        setState(() {
-                          _index = (_index + 1) % mode.length;
-                          listDevice[_room][_id]['index'] = _index;
-                        });
-                      },
+                      onPressed: () {},
                       child: const Text(
                         "Dry",
                         style: TextStyle(fontSize: 35, color: Colors.black),

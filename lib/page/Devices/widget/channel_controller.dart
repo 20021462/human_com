@@ -80,7 +80,7 @@ class ChannelController extends StatelessWidget {
                         MaterialStateProperty.all<Size>(const Size(120, 120)),
                     shadowColor:
                         MaterialStateProperty.all<Color>(Colors.black)),
-                onPressed: rightButtFunc,
+                onPressed: () {},
                 child: const Icon(
                   Icons.pause,
                   size: 90,
