@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:human_com/page/Devices/Device/air_conditioner.dart';
+import 'package:human_com/page/Devices/Camera/camera.dart';
 import 'package:human_com/page/Devices/Device/curtain.dart';
 import 'package:human_com/page/Devices/Device/dishwasher.dart';
 import 'package:human_com/page/Devices/Device/fan.dart';
@@ -13,7 +14,10 @@ import 'package:human_com/page/Devices/widget/device_button.dart';
 import 'package:human_com/page/Devices/Rooms/bedroom_page.dart';
 import 'package:human_com/page/Devices/Rooms/kitchen_page.dart';
 import 'package:human_com/page/Devices/Rooms/livingroom_page.dart';
+import 'package:human_com/page/Devices/Camera/camera.dart';
 import 'package:human_com/widget/page.dart';
+
+import 'Device/door.dart';
 
 var listDevice = {
   'livingroom': [
@@ -178,14 +182,28 @@ class DevicesMain extends StatelessWidget {
                 DeviceButton(
                     deviceName: "Camera",
                     icon: Icons.camera_outlined,
-                    onpressed: () {}),
+                    onpressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Camera(),
+                        ),
+                      );
+                    }),
                 const SizedBox(
                   width: 40,
                 ),
                 DeviceButton(
                     deviceName: "Door",
                     icon: Icons.door_back_door_outlined,
-                    onpressed: () {})
+                    onpressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Door(),
+                        ),
+                      );
+                    })
               ],
             ),
             const SizedBox(
