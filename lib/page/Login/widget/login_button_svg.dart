@@ -24,7 +24,7 @@ class LoginButtonSVG extends StatelessWidget {
         ),
         backgroundColor:
             MaterialStateProperty.all<Color>(const Color(0xFFF0FBFF)),
-        fixedSize: MaterialStateProperty.all<Size>(const Size(620, 100)),
+        fixedSize: MaterialStateProperty.all<Size>(const Size(580, 95)),
       ),
       onPressed: onPressed,
       child: Row(
@@ -34,8 +34,8 @@ class LoginButtonSVG extends StatelessWidget {
           ),
           SvgPicture.asset(
             icon,
-            width: 60,
-            height: 60,
+            width: 50,
+            height: 50,
           ),
           const SizedBox(
             width: 50,

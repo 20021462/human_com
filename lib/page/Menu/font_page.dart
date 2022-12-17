@@ -19,10 +19,11 @@ class _FontSizePageState extends State<FontSizePage> {
       title: 'Font Size',
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 550,
+              height: 320,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -46,7 +47,7 @@ class _FontSizePageState extends State<FontSizePage> {
             Column(
               children: [
                 const SizedBox(
-                  width: 1500,
+                  width: 1300,
                   child: Text(
                     'Font size',
                     style: TextStyle(

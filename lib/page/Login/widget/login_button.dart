@@ -23,7 +23,7 @@ class LoginButton extends StatelessWidget {
         ),
         backgroundColor:
             MaterialStateProperty.all<Color>(const Color(0xFFF0FBFF)),
-        fixedSize: MaterialStateProperty.all<Size>(const Size(620, 100)),
+        fixedSize: MaterialStateProperty.all<Size>(const Size(580, 95)),
       ),
       onPressed: onPressed,
       child: Row(

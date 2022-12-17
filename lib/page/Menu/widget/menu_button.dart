@@ -23,7 +23,7 @@ class MenuButton extends StatelessWidget {
         ),
         backgroundColor:
             MaterialStateProperty.all<Color>(const Color(0xFFEFFAFE)),
-        fixedSize: MaterialStateProperty.all<Size>(const Size(1500, 130)),
+        fixedSize: MaterialStateProperty.all<Size>(const Size(1300, 120)),
       ),
       onPressed: onPressed,
       child: Row(

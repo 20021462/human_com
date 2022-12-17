@@ -21,13 +21,13 @@ class LoginButt extends StatelessWidget {
         ),
         backgroundColor:
             MaterialStateProperty.all<Color>(const Color(0xFF417D86)),
-        fixedSize: MaterialStateProperty.all<Size>(const Size(385, 115)),
+        fixedSize: MaterialStateProperty.all<Size>(const Size(360, 100)),
       ),
       onPressed: onPressed,
       child: Text(
         title,
         style: const TextStyle(
-          fontSize: 80,
+          fontSize: 70,
           fontWeight: FontWeight.w300,
           color: Colors.white,
         ),

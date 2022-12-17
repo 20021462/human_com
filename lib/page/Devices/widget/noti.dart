@@ -19,7 +19,7 @@ class _NotiState extends State<Noti> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1230,
+      width: 1130,
       height: 80,
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -30,7 +30,7 @@ class _NotiState extends State<Noti> {
       child: Text(
         widget.content,
         style: TextStyle(
-            fontSize: 50,
+            fontSize: 40,
             fontFamily: 'Inter',
             fontWeight: widget.read ? FontWeight.normal : FontWeight.bold),
         textAlign: TextAlign.center,

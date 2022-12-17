@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: ListView(
         children: [
-          SizedBox(height: 110),
+          SizedBox(height: 60),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,13 +36,13 @@ class _LoginPageState extends State<LoginPage> {
               Text(
                 'LOGIN',
                 style: TextStyle(
-                  fontSize: 120,
+                  fontSize: 100,
                   fontWeight: FontWeight.w800,
                   color: Color(0xFF4B6E7B),
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               IntrinsicHeight(
                 child: SizedBox(
@@ -55,6 +55,9 @@ class _LoginPageState extends State<LoginPage> {
                         .center, //Center Row contents vertically,
 
                     children: [
+                      SizedBox(
+                        width: 50,
+                      ),
                       Expanded(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -116,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                                 hint: "Enter your Email/Phone number",
                                 icon: Icon(
                                   Icons.account_circle,
-                                  size: 60,
+                                  size: 50,
                                 ),
                                 onPressed: () {},
                               ),
@@ -142,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                                     visiblePassword
                                         ? Icons.visibility
                                         : Icons.visibility_off,
-                                    size: 60,
+                                    size: 50,
                                   ),
                                 ),
                                 onPressed: () {},
@@ -180,16 +183,19 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 );
                               },
-                            )
+                            ),
                           ],
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
                     ],
                   ),
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment
@@ -217,7 +223,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   )
                 ],
-              )
+              ),
             ],
           ),
         ],

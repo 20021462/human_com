@@ -12,7 +12,7 @@ class NotiPage2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      // crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         OutlinedButton(
             style: ButtonStyle(
@@ -45,6 +45,9 @@ class NotiPage2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 30,
+            ),
             Text(
               'Yesterday - Wednesday, December 11, 2022',
               style: TextStyle(

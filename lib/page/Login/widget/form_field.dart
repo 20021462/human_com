@@ -29,7 +29,7 @@ class LoginFormField extends StatelessWidget {
           hintText: hint,
           hintStyle: const TextStyle(
               color: Color.fromRGBO(0, 0, 0, 30),
-              fontSize: 35,
+              fontSize: 30,
               fontWeight: FontWeight.w100),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIcon: icon),

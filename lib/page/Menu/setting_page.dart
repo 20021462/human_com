@@ -35,7 +35,7 @@ class _SettingPageState extends State<SettingPage> {
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFEFFAFE)),
                 fixedSize:
-                    MaterialStateProperty.all<Size>(const Size(1500, 100)),
+                    MaterialStateProperty.all<Size>(const Size(1300, 100)),
               ),
               onPressed: () {
                 setState(() {
@@ -90,7 +90,7 @@ class _SettingPageState extends State<SettingPage> {
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFEFFAFE)),
                 fixedSize:
-                    MaterialStateProperty.all<Size>(const Size(1500, 100)),
+                    MaterialStateProperty.all<Size>(const Size(1300, 100)),
               ),
               onPressed: () {
                 setState(() {
@@ -145,7 +145,7 @@ class _SettingPageState extends State<SettingPage> {
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFEFFAFE)),
                 fixedSize:
-                    MaterialStateProperty.all<Size>(const Size(1500, 100)),
+                    MaterialStateProperty.all<Size>(const Size(1300, 100)),
               ),
               onPressed: () {
                 Navigator.push(
@@ -198,7 +198,7 @@ class _SettingPageState extends State<SettingPage> {
                 backgroundColor:
                     MaterialStateProperty.all<Color>(const Color(0xFFEFFAFE)),
                 fixedSize:
-                    MaterialStateProperty.all<Size>(const Size(1500, 100)),
+                    MaterialStateProperty.all<Size>(const Size(1300, 100)),
               ),
               onPressed: () {
                 Navigator.push(
