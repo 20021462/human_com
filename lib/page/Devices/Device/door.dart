@@ -60,20 +60,20 @@ class _DoorState extends State<Door> {
                     backgroundColor: MaterialStateProperty.all<Color>(
                         _lockall ? const Color(0xFFFF6231) : Color(0xFF2ABBAA)),
                     fixedSize:
-                        MaterialStateProperty.all<Size>(const Size(300, 120)),
+                        MaterialStateProperty.all<Size>(const Size(300, 100)),
                     shadowColor:
                         MaterialStateProperty.all<Color>(Colors.black)),
               ),
               SizedBox(
-                height: 50,
+                height: 30,
               ),
               _door_list[0],
               SizedBox(
-                height: 50,
+                height: 30,
               ),
               _door_list[1],
               SizedBox(
-                height: 50,
+                height: 30,
               ),
               _door_list[2],
             ]),

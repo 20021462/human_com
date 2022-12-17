@@ -30,8 +30,8 @@ class _DoorControlState extends State<DoorControl> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 120,
-          width: 500,
+          height: 100,
+          width: 450,
           alignment: Alignment.center,
           decoration: new BoxDecoration(
             color: Color(0xFFA2D5EB),
@@ -65,7 +65,7 @@ class _DoorControlState extends State<DoorControl> {
               ),
               backgroundColor: MaterialStateProperty.all<Color>(
                   _locked ? Color(0xFF2ABBAA) : Color(0xFFFF6231)),
-              fixedSize: MaterialStateProperty.all<Size>(const Size(260, 120)),
+              fixedSize: MaterialStateProperty.all<Size>(const Size(260, 100)),
               shadowColor: MaterialStateProperty.all<Color>(Colors.black)),
         ),
       ],

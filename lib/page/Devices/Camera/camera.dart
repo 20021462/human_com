@@ -123,8 +123,8 @@ class _CameraState extends State<Camera> {
                                   width: 5,
                                 ),
                               ),
-                              width: 600,
-                              height: 300,
+                              width: 550,
+                              height: 270,
                               child: _imgList[i]),
                       ],
                     )
@@ -134,8 +134,8 @@ class _CameraState extends State<Camera> {
                           width: 5,
                         ),
                       ),
-                      width: 1210,
-                      height: 610,
+                      width: 1120,
+                      height: 550,
                       child: _imgList[_currentCam - 1]),
             )
           ],
