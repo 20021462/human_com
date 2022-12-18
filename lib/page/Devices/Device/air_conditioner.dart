@@ -119,6 +119,8 @@ class _AirConditionerState extends State<AirConditioner> {
                   label: "Temperature",
                   value: "$_temperature℃",
                   status: _status,
+                  leftTitle: 'Decrease',
+                  rightTitle: 'Increase',
                 ),
                 const SizedBox(
                   height: 30,
@@ -129,6 +131,8 @@ class _AirConditionerState extends State<AirConditioner> {
                   label: "Fanspeed",
                   value: _fanspeed.toString(),
                   status: _status,
+                  leftTitle: 'Decrease',
+                  rightTitle: 'Increase',
                 ),
               ],
             ),

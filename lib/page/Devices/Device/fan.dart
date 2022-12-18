@@ -115,6 +115,8 @@ class _FanState extends State<Fan> {
                   label: "Fan speed",
                   value: _fanspeed.toString(),
                   status: _status,
+                  leftTitle: 'Decrease',
+                  rightTitle: 'Increase',
                 ),
                 const SizedBox(
                   height: 30,
@@ -125,6 +127,8 @@ class _FanState extends State<Fan> {
                   label: "Humidity",
                   value: "$_humidity%",
                   status: _status,
+                  leftTitle: 'Decrease',
+                  rightTitle: 'Increase',
                 ),
               ],
             ),

@@ -96,6 +96,8 @@ class _LampState extends State<Lamp> {
                       label: "Brightness",
                       value: "$_brightness%",
                       status: _status,
+                      leftTitle: 'Decrease',
+                      rightTitle: 'Increase',
                     ),
                   ]),
             )

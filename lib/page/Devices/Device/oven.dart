@@ -129,16 +129,22 @@ class _OvenState extends State<Oven> {
                       label: "Temperature",
                       value: '$_temperature℃',
                       status: _status,
+                      leftTitle: 'Decrease',
+                      rightTitle: 'Increase',
                     ),
                     const SizedBox(
                       height: 30,
                     ),
                     ControlButton(
                       leftButtFunc: _decreaseTimer,
+                      leftTitle: 'Decrease',
+                      rightTitle: 'Increase',
                       rightButtFunc: _incrementTimer,
                       label: "Timer",
                       value: "$_timerH:$_timerM",
                       status: _status,
+                      // leftTitle: 'Decrease',
+                      // rightTitle: 'Increase',
                     )
                   ]),
             )

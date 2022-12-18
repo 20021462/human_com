@@ -5,6 +5,8 @@ class ControlButton extends StatelessWidget {
   final Function() rightButtFunc;
   final String label;
   final String value;
+  final String leftTitle;
+  final String rightTitle;
   final bool status;
   const ControlButton({
     Key key,
@@ -13,6 +15,8 @@ class ControlButton extends StatelessWidget {
     this.label,
     this.value,
     this.status,
+    this.leftTitle,
+    this.rightTitle,
   }) : super(key: key);
 
   @override
@@ -21,6 +25,20 @@ class ControlButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
+        Column(
+          children: [
+            Text(
+              leftTitle,
+              style: TextStyle(color: Colors.black, fontSize: 40),
+            ),
+            SizedBox(
+              height: 30,
+            )
+          ],
+        ),
+        SizedBox(
+          width: 15,
+        ),
         ElevatedButton(
             style: ButtonStyle(
                 shape: MaterialStateProperty.all<CircleBorder>(
@@ -91,6 +109,20 @@ class ControlButton extends StatelessWidget {
               size: 90,
               color: Colors.black,
             )),
+        SizedBox(
+          width: 15,
+        ),
+        Column(
+          children: [
+            Text(
+              rightTitle,
+              style: TextStyle(color: Colors.black, fontSize: 40),
+            ),
+            SizedBox(
+              height: 30,
+            )
+          ],
+        ),
       ],
     );
   }

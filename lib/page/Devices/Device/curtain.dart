@@ -96,6 +96,8 @@ class _CurtainState extends State<Curtain> {
                       label: "Shade level",
                       value: "$_shadelevel%",
                       status: _status,
+                      leftTitle: 'Decrease',
+                      rightTitle: 'Increase',
                     ),
                   ]),
             )

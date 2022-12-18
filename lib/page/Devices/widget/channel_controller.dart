@@ -7,6 +7,8 @@ class ChannelController extends StatelessWidget {
 
   final String channel;
   final String programme;
+  final String leftTitle;
+  final String rightTitle;
 
   final bool status;
   const ChannelController({
@@ -16,25 +18,27 @@ class ChannelController extends StatelessWidget {
     this.status,
     this.channel,
     this.programme,
+    this.leftTitle,
+    this.rightTitle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          channel,
-          style: const TextStyle(fontSize: 40),
-        ),
+        // Text(
+        //   channel,
+        //   style: const TextStyle(fontSize: 40),
+        // ),
         Container(
           width: 420,
-          height: 60,
+          height: 40,
           color: status
               ? const Color.fromRGBO(248, 221, 125, 0.45)
               : const Color(0xffD9D9D9),
           child: Marquee(
             text: programme,
-            style: const TextStyle(fontSize: 30),
+            style: const TextStyle(fontSize: 25),
             velocity: 25.0,
             startPadding: 10.0,
             blankSpace: 20.0,
@@ -48,6 +52,20 @@ class ChannelController extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
+            Column(
+              children: [
+                Text(
+                  leftTitle,
+                  style: TextStyle(color: Colors.black, fontSize: 40),
+                ),
+                SizedBox(
+                  height: 30,
+                )
+              ],
+            ),
+            SizedBox(
+              width: 15,
+            ),
             ElevatedButton(
                 style: ButtonStyle(
                     alignment: Alignment.center,
@@ -107,6 +125,23 @@ class ChannelController extends StatelessWidget {
                   size: 90,
                   color: Colors.black,
                 )),
+            SizedBox(
+              width: 15,
+            ),
+            Column(
+              children: [
+                Text(
+                  rightTitle,
+                  style: TextStyle(color: Colors.black, fontSize: 40),
+                ),
+                SizedBox(
+                  height: 30,
+                )
+              ],
+            ),
+            SizedBox(
+              width: 70,
+            ),
           ],
         ),
       ],

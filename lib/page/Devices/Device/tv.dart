@@ -115,6 +115,8 @@ class _TVState extends State<TV> {
                       status: _status,
                       channel: channel[_index],
                       programme: programme[_index],
+                      leftTitle: 'Previous',
+                      rightTitle: 'Next',
                     ),
                     const SizedBox(
                       height: 30,
@@ -125,6 +127,8 @@ class _TVState extends State<TV> {
                       label: "Volume",
                       value: _volume.toString(),
                       status: _status,
+                      leftTitle: 'Decrease',
+                      rightTitle: 'Increase',
                     )
                   ]),
             )

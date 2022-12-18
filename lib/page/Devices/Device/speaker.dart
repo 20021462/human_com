@@ -116,6 +116,8 @@ class _SpeakerState extends State<Speaker> {
                       status: _status,
                       channel: channel[0],
                       programme: programme[_index],
+                      leftTitle: 'Previous',
+                      rightTitle: 'Next',
                     ),
                     const SizedBox(
                       height: 30,
@@ -126,6 +128,8 @@ class _SpeakerState extends State<Speaker> {
                       label: "Volume",
                       value: _volume.toString(),
                       status: _status,
+                      leftTitle: 'Decrease',
+                      rightTitle: 'Increase',
                     )
                   ]),
             )
