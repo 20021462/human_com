@@ -1,0 +1,6 @@
+Các bước để chạy ứng dụng:
+- Cài đặt ứng dụng Android Studio hoặc dùng Visual Studio Code + emulator.
+- Cài đặt flutter SDK.
+- Clone project từ Github về máy.
+- Tạo virtual device trên Android Studio có kích thước 12.3 inch, độ phân giải 1440x960.
+- Chạy project trên virtual device vừa tạo với màn hình quay ngang.
